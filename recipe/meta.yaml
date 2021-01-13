@@ -1,5 +1,5 @@
 {% set name = "sktime" %}
-{% set version = "0.5.1" %}
+{% set version = "0.5.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/alan-turing-institute/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: ac581f3cd3d0c17e81ac83c827ca1db7b2938d6d60deb13835c95dfd0913114a
+  sha256: 75f47d5eb91ca35cbd9d07c538f6f935f8144da7e44ff671dd38848f888de83b
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -66,7 +66,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'A unified framework for machine learning with time series'
+  summary: A unified framework for machine learning with time series
   doc_url: https://www.sktime.org/en/latest/
   dev_url: https://github.com/alan-turing-institute/sktime
 
