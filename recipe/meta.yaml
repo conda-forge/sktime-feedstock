@@ -53,13 +53,11 @@ outputs:
         - sktime.utils
 
   - name: sktime-all-extras
-    build:
-      noarch: python
     requirements:
       run:
         - {{ pin_subpackage("sktime", max_pin="x.x.x.x") }}
         - matplotlib >=3.3.2
-        - pmdarima >=1.8.0,!=1.8.1
+        # - pmdarima >=1.8.0,!=1.8.1
         - scikit-posthocs >=0.6.5
         - seaborn >=0.11.0
         - tsfresh >=0.17.0
