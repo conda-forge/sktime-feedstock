@@ -10,7 +10,6 @@ source:
   sha256: 36763d234243ff5c7b5646a9f77706623e7ba5b08770f9020ed759c61a5b0693
 
 build:
-  skip: true  # [py>38]
   number: 2
 
 outputs:
@@ -21,6 +20,7 @@ outputs:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - llvm-openmp  # [osx]
+        skip: true  # [py>38]
       host:
         - python
         - cython >=0.29
