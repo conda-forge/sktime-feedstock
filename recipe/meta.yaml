@@ -11,6 +11,7 @@ source:
 
 build:
   number: 2
+  skip: true  # [py>38]
 
 outputs:
   - name: sktime
@@ -20,7 +21,6 @@ outputs:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - llvm-openmp  # [osx]
-      skip: true  # [py>38]
       host:
         - python
         - cython >=0.29
@@ -53,12 +53,9 @@ outputs:
         - sktime.utils
 
   - name: sktime-all-extras
+    build:
+      noarch: python
     requirements:
-      build:
-        - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
-        - llvm-openmp  # [osx]
-      skip: true  # [py>38]
       run:
         - {{ pin_subpackage("sktime", max_pin="x.x.x.x") }}
         - matplotlib >=3.3.2
@@ -71,6 +68,7 @@ outputs:
         - stumpy >=1.5.1
         # - tbats >=1.1.0
         - fbprophet >=0.7.1
+        - python
     test:
       imports:
         - sktime
