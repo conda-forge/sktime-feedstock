@@ -20,7 +20,7 @@ outputs:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - llvm-openmp  # [osx]
-        skip: true  # [py>38]
+      skip: true  # [py>38]
       host:
         - python
         - cython >=0.29
@@ -54,6 +54,7 @@ outputs:
 
   - name: sktime-all-extras
     requirements:
+      skip: true  # [py>38]
       run:
         - {{ pin_subpackage("sktime", max_pin="x.x.x.x") }}
         - matplotlib >=3.3.2
