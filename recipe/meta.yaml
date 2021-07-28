@@ -10,7 +10,7 @@ source:
   sha256: 36763d234243ff5c7b5646a9f77706623e7ba5b08770f9020ed759c61a5b0693
 
 build:
-  number: 2
+  number: 3
   skip: true  # [py>38]
 
 outputs:
@@ -40,7 +40,7 @@ outputs:
         - statsmodels >=0.12.1
         - numba >=0.50,<0.55
       run_constrained:
-        - matplotlib >=3.3.2
+        - matplotlib-base >=3.3.2
         - pmdarima >=1.8.0,!=1.8.1
         - scikit-posthocs >=0.6.5
         - seaborn >=0.11.0
@@ -65,7 +65,7 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage("sktime", max_pin="x.x.x.x") }}
-        - matplotlib >=3.3.2
+        - matplotlib-base >=3.3.2
         # - pmdarima >=1.8.0,!=1.8.1
         - scikit-posthocs >=0.6.5
         - seaborn >=0.11.0
