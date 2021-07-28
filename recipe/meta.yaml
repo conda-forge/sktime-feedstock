@@ -10,57 +10,84 @@ source:
   sha256: 36763d234243ff5c7b5646a9f77706623e7ba5b08770f9020ed759c61a5b0693
 
 build:
+  number: 2
   skip: true  # [py>38]
-  number: 1
-  script: {{ PYTHON }} -m pip install . -vv
 
-requirements:
-  build:
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
-    - llvm-openmp  # [osx]
-  host:
-    - python
-    - cython >=0.29
-    - numba >=0.50,<0.55
-    - numpy >=1.19
-    - pandas >=1.1.0,<1.4
-    - pip
-    - setuptools
-    - scikit-learn >=0.24.0
-    - statsmodels >=0.12.1
-    - wheel
-  run:
-    - python
-    - {{ pin_compatible('numpy') }}
-    - pandas >=1.1.0,<1.4
-    - scikit-learn >=0.24.0
-    - statsmodels >=0.12.1
-    - numba >=0.50,<0.55
-  run_constrained:
-    - matplotlib >=3.3.2
-    - pmdarima >=1.8.0
-    - scikit-posthocs >=0.6.5
-    - seaborn >=0.11.0
-    - tsfresh >=0.17.0
-    # - catch22 >=0.1.0
-    - hcrystalball >=0.1.9
-    - stumpy >=1.5.1
-    # - tbats >=1.1.0
-    - fbprophet >=0.7.1
+outputs:
+  - name: sktime
+    script: build_script.sh
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - llvm-openmp  # [osx]
+      host:
+        - python
+        - cython >=0.29
+        - numba >=0.50,<0.55
+        - numpy >=1.19
+        - pandas >=1.1.0,<1.4
+        - pip
+        - setuptools
+        - scikit-learn >=0.24.0
+        - statsmodels >=0.12.1
+        - wheel
+      run:
+        - python
+        - {{ pin_compatible('numpy') }}
+        - pandas >=1.1.0,<1.4
+        - scikit-learn >=0.24.0
+        - statsmodels >=0.12.1
+        - numba >=0.50,<0.55
+      run_constrained:
+        - matplotlib >=3.3.2
+        - pmdarima >=1.8.0,!=1.8.1
+        - scikit-posthocs >=0.6.5
+        - seaborn >=0.11.0
+        - tsfresh >=0.17.0
+        - hcrystalball >=0.1.9
+        - stumpy >=1.5.1
+        - fbprophet >=0.7.1
+    test:
+      imports:
+        - sktime
+        - sktime.classification
+        - sktime.datasets
+        - sktime.distances
+        - sktime.forecasting
+        - sktime.performance_metrics
+        - sktime.regression
+        - sktime.series_as_features
+        - sktime.transformations
+        - sktime.utils
 
-test:
-  imports:
-    - sktime
-    - sktime.classification
-    - sktime.datasets
-    - sktime.distances
-    - sktime.forecasting
-    - sktime.performance_metrics
-    - sktime.regression
-    - sktime.series_as_features
-    - sktime.transformations
-    - sktime.utils
+  - name: sktime-all-extras
+    requirements:
+      run:
+        - {{ pin_subpackage("sktime", max_pin="x.x.x.x") }}
+        - matplotlib >=3.3.2
+        # - pmdarima >=1.8.0,!=1.8.1
+        - scikit-posthocs >=0.6.5
+        - seaborn >=0.11.0
+        - tsfresh >=0.17.0
+        # - catch22 >=0.1.0
+        - hcrystalball >=0.1.9
+        - stumpy >=1.5.1
+        # - tbats >=1.1.0
+        - fbprophet >=0.7.1
+        - python
+    test:
+      imports:
+        - sktime
+        - sktime.classification
+        - sktime.datasets
+        - sktime.distances
+        - sktime.forecasting
+        - sktime.performance_metrics
+        - sktime.regression
+        - sktime.series_as_features
+        - sktime.transformations
+        - sktime.utils
 
 about:
   home: https://github.com/alan-turing-institute/sktime

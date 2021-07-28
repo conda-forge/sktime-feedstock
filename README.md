@@ -107,6 +107,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-sktime-green.svg)](https://anaconda.org/conda-forge/sktime) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/sktime.svg)](https://anaconda.org/conda-forge/sktime) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/sktime.svg)](https://anaconda.org/conda-forge/sktime) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/sktime.svg)](https://anaconda.org/conda-forge/sktime) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-sktime--all--extras-green.svg)](https://anaconda.org/conda-forge/sktime-all-extras) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/sktime-all-extras.svg)](https://anaconda.org/conda-forge/sktime-all-extras) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/sktime-all-extras.svg)](https://anaconda.org/conda-forge/sktime-all-extras) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/sktime-all-extras.svg)](https://anaconda.org/conda-forge/sktime-all-extras) |
 
 Installing sktime
 =================
@@ -118,10 +119,10 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `sktime` can be installed with:
+Once the `conda-forge` channel has been enabled, `sktime, sktime-all-extras` can be installed with:
 
 ```
-conda install sktime
+conda install sktime sktime-all-extras
 ```
 
 It is possible to list all of the versions of `sktime` available on your platform with:
