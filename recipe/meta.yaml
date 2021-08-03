@@ -10,7 +10,7 @@ source:
   sha256: 36763d234243ff5c7b5646a9f77706623e7ba5b08770f9020ed759c61a5b0693
 
 build:
-  number: 2
+  number: 3
   skip: true  # [py>38]
 
 outputs:
@@ -25,7 +25,7 @@ outputs:
         - python
         - cython >=0.29
         - numba >=0.50,<0.55
-        - numpy >=1.19
+        - numpy 1.19.*
         - pandas >=1.1.0,<1.4
         - pip
         - setuptools
@@ -66,7 +66,7 @@ outputs:
       run:
         - {{ pin_subpackage("sktime", max_pin="x.x.x.x") }}
         - matplotlib >=3.3.2
-        # - pmdarima >=1.8.0,!=1.8.1
+        - pmdarima >=1.8.0,!=1.8.1  # [not win]
         - scikit-posthocs >=0.6.5
         - seaborn >=0.11.0
         - tsfresh >=0.17.0
