@@ -10,8 +10,9 @@ source:
   sha256: 36763d234243ff5c7b5646a9f77706623e7ba5b08770f9020ed759c61a5b0693
 
 build:
-  number: 4
-  skip: true  # [py>38]
+  number: 5
+  skip: true  # [py>39]
+
 
 outputs:
   - name: sktime
