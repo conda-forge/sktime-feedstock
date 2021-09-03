@@ -10,8 +10,9 @@ source:
   sha256: 36763d234243ff5c7b5646a9f77706623e7ba5b08770f9020ed759c61a5b0693
 
 build:
-  number: 4
-  skip: true  # [py>38]
+  number: 5
+  skip: true  # [py>39]
+
 
 outputs:
   - name: sktime
@@ -66,7 +67,7 @@ outputs:
       run:
         - {{ pin_subpackage("sktime", max_pin="x.x.x.x") }}
         - matplotlib-base >=3.3.2
-        - pmdarima >=1.8.0,!=1.8.1  # [not win]
+        - pmdarima >=1.8.0,!=1.8.1  # [not win and py<=38]
         - scikit-posthocs >=0.6.5
         - seaborn >=0.11.0
         - tsfresh >=0.17.0
@@ -74,7 +75,7 @@ outputs:
         - hcrystalball >=0.1.9
         - stumpy >=1.5.1
         # - tbats >=1.1.0
-        - fbprophet >=0.7.1
+        - fbprophet >=0.7.1  # [py<=38]
         - python
     test:
       imports:
