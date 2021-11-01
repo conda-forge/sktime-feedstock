@@ -10,7 +10,7 @@ source:
   sha256: f7eb20db2a8f2783eb9026a54faeec26077e4af5cdb8da4486f3e097bac0eebf
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py>39]
 
 
@@ -31,14 +31,14 @@ outputs:
         - pip
         - setuptools
         - scikit-learn >=0.24.0
-        - statsmodels >=0.12.1
+        - statsmodels ==0.12.1
         - wheel
       run:
         - python
         - {{ pin_compatible('numpy') }}
         - pandas >=1.1.0,<1.4
         - scikit-learn >=0.24.0
-        - statsmodels >=0.12.1
+        - statsmodels ==0.12.1
         - numba >=0.50,<0.55
       run_constrained:
         - matplotlib-base >=3.3.2
