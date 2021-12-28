@@ -35,6 +35,7 @@ outputs:
         - wheel
       run:
         - python
+        - deprecated >=1.2.13
         - {{ pin_compatible('numpy') }}
         - pandas >=1.1.0,<1.4
         - scikit-learn >=0.24.0
@@ -47,7 +48,7 @@ outputs:
         - seaborn >=0.11.0
         - tsfresh >=0.17.0
         - hcrystalball >=0.1.9
-        - stumpy >=1.5.1
+        - stumpy >=1.5.1,<=1.9.2
         - fbprophet >=0.7.1
     test:
       imports:
