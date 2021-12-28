@@ -24,6 +24,7 @@ outputs:
         - llvm-openmp  # [osx]
       host:
         - python
+        - deprecated >=1.2.13
         - cython >=0.29
         - numba >=0.53,<0.55
         - numpy 1.19.*
