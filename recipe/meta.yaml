@@ -103,5 +103,6 @@ about:
 
 extra:
   recipe-maintainers:
+    - freddyaboulton
     - dhirschfeld
     - mloning
