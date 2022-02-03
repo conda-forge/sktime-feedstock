@@ -197,5 +197,7 @@ Feedstock Maintainers
 =====================
 
 * [@dhirschfeld](https://github.com/dhirschfeld/)
+* [@freddyaboulton](https://github.com/freddyaboulton/)
+* [@lmmentel](https://github.com/lmmentel/)
 * [@mloning](https://github.com/mloning/)
 
