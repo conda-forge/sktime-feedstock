@@ -27,8 +27,8 @@ outputs:
         - deprecated >=1.2.13
         - cython >=0.29
         - numba >=0.53,<0.55
-        - numpy 1.19.*
-        - pandas >=1.1.0
+        - numpy 1.21.*
+        - pandas >=1.1.0,<1.5.0
         - pip
         - setuptools
         - scikit-learn >=0.24.0
@@ -38,7 +38,7 @@ outputs:
         - python
         - deprecated >=1.2.13
         - {{ pin_compatible('numpy') }}
-        - pandas >=1.1.0,<1.4
+        - pandas >=1.1.0,<1.5
         - scikit-learn >=0.24.0
         - statsmodels ==0.12.1
         - numba >=0.50,<0.55
@@ -49,8 +49,8 @@ outputs:
         - seaborn >=0.11.0
         - tsfresh >=0.17.0
         - hcrystalball >=0.1.9
-        - stumpy >=1.5.1,<=1.9.2
-        - fbprophet >=0.7.1
+        - stumpy >=1.5.1
+        - fbprophet >=1.0
     test:
       imports:
         - sktime
