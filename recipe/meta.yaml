@@ -32,7 +32,7 @@ outputs:
         - pip
         - setuptools
         - scikit-learn >=0.24.0
-        - statsmodels ==0.12.1
+        - statsmodels >=0.12.1
         - wheel
       run:
         - python
@@ -50,7 +50,7 @@ outputs:
         - tsfresh >=0.17.0
         - hcrystalball >=0.1.9
         - stumpy >=1.5.1
-        - fbprophet >=1.0
+        - prophet >=1.0
     test:
       imports:
         - sktime
