@@ -40,7 +40,7 @@ outputs:
         - {{ pin_compatible('numpy') }}
         - pandas >=1.1.0,<1.5
         - scikit-learn >=0.24.0
-        - statsmodels ==0.12.1
+        - statsmodels >=0.12.1
         - numba >=0.50,<0.55
       run_constrained:
         - matplotlib-base >=3.3.2
@@ -77,7 +77,7 @@ outputs:
         - hcrystalball >=0.1.9
         - stumpy >=1.5.1
         # - tbats >=1.1.0
-        - fbprophet >=0.7.1  # [py<=38]
+        - prophet >=1.0  # [py<=38]
         - python
     test:
       imports:
