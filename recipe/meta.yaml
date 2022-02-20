@@ -103,6 +103,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - fkiraly
     - dhirschfeld
     - freddyaboulton
     - lmmentel
