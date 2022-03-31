@@ -10,7 +10,7 @@ source:
   sha256: 466cc9291fac47187807a049b3da34018a5b58d386110146714da377028d8063
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py>39]
 
 
@@ -50,6 +50,7 @@ outputs:
         - tsfresh >=0.17.0
         - hcrystalball >=0.1.9
         - stumpy >=1.5.1
+        - tbats >=1.1.0
         - prophet >=1.0
     test:
       imports:
@@ -76,7 +77,7 @@ outputs:
         # - catch22 >=0.1.0
         - hcrystalball >=0.1.9
         - stumpy >=1.5.1
-        # - tbats >=1.1.0
+        - tbats >=1.1.0
         - prophet >=1.0  # [py<=38]
         - python
     test:
