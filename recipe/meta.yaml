@@ -1,5 +1,5 @@
 {% set name = "sktime" %}
-{% set version = "0.11.0" %}
+{% set version = "0.11.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/alan-turing-institute/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 466cc9291fac47187807a049b3da34018a5b58d386110146714da377028d8063
+  sha256: fdb97f77895cf405493cd3273b05d4ab0ca786913d26ab2bc54f614a572e81fc
 
 build:
-  number: 1
+  number: 0
   skip: true  # [py>39]
 
 
@@ -34,6 +34,7 @@ outputs:
         - scikit-learn >=0.24.0
         - statsmodels >=0.12.1
         - wheel
+        - toml
       run:
         - python
         - deprecated >=1.2.13
@@ -41,7 +42,8 @@ outputs:
         - pandas >=1.1.0,<1.5
         - scikit-learn >=0.24.0
         - statsmodels >=0.12.1
-        - numba >=0.50,<0.55
+        - numba >=0.53,<0.55
+        - scipy <1.8.0
       run_constrained:
         - matplotlib-base >=3.3.2
         - pmdarima >=1.8.0,!=1.8.1
