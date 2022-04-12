@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/alan-turing-institute/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: c5f139f2d0e69feecba205429f2267e51c67b2d3b84340e7a4fc5c7f09b87716
+  sha256: d9d0edd3c9dbb164da83322cca831b37932446b47815449c309527cc085fee2d
 
 build:
   number: 0
