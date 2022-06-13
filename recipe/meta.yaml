@@ -1,5 +1,5 @@
 {% set name = "sktime" %}
-{% set version = "0.11.4" %}
+{% set version = "0.12.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/alan-turing-institute/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 2d00febab71791fefa802a4011cf236fa67d3790707069dde95e236ebc40fc32
+  sha256: ae789f0c50b43c9e29c39bd9f9bc98a06f7fa6776c9bd662e869a2c35aedbf3b
 
 build:
   number: 0
@@ -54,6 +54,8 @@ outputs:
         - stumpy >=1.5.1
         - tbats >=1.1.0
         - prophet >=1.0
+        - filterpy >=1.4.5
+        - pykalman >=0.9.5
     test:
       imports:
         - sktime
@@ -81,6 +83,8 @@ outputs:
         - stumpy >=1.5.1
         - tbats >=1.1.0
         - prophet >=1.0  # [py<=38]
+        - filterpy >=1.4.5
+        - pykalman >=0.9.5
         - python
     test:
       imports:
