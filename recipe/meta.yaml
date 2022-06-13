@@ -1,5 +1,5 @@
 {% set name = "sktime" %}
-{% set version = "0.11.4" %}
+{% set version = "0.12.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/alan-turing-institute/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 2d00febab71791fefa802a4011cf236fa67d3790707069dde95e236ebc40fc32
+  sha256: 70f312d0f8632a44a90c12d559f8d3504661eb9bc3a11790eeddaca0915ab960
 
 build:
   number: 0
