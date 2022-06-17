@@ -20,7 +20,6 @@ outputs:
     script: build_script.sh
     requirements:
       build:
-        - noarch: python
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - llvm-openmp  # [osx]
