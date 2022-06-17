@@ -11,7 +11,7 @@ source:
   sha256: ae789f0c50b43c9e29c39bd9f9bc98a06f7fa6776c9bd662e869a2c35aedbf3b
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py>39]
 
 
@@ -20,6 +20,7 @@ outputs:
     script: build_script.sh
     requirements:
       build:
+        - noarch: python
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - llvm-openmp  # [osx]
