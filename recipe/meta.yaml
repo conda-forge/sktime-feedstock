@@ -12,7 +12,7 @@ source:
 
 build:
   number: 1
-  skip: true  # [py<37 and aarch64 or py>39]
+  skip: true  # [(py==37 and aarch64) or py>39]
 
 
 outputs:
