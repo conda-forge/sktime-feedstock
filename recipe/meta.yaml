@@ -11,8 +11,8 @@ source:
   sha256: ae789f0c50b43c9e29c39bd9f9bc98a06f7fa6776c9bd662e869a2c35aedbf3b
 
 build:
-  number: 0
-  skip: true  # [py>39]
+  number: 1
+  skip: true  # [(py==37 and aarch64) or py>39]
 
 
 outputs:
@@ -20,6 +20,9 @@ outputs:
     script: build_script.sh
     requirements:
       build:
+        - python                                 # [build_platform != target_platform]
+        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+        - numpy 1.21.*                           # [build_platform != target_platform]
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - llvm-openmp  # [osx]
@@ -53,7 +56,7 @@ outputs:
         - hcrystalball >=0.1.9
         - stumpy >=1.5.1
         - tbats >=1.1.0
-        - prophet >=1.0
+        - prophet >=1.0  # [not aarch64]
         - filterpy >=1.4.5
         - pykalman >=0.9.5
     test:
@@ -82,7 +85,7 @@ outputs:
         - hcrystalball >=0.1.9
         - stumpy >=1.5.1
         - tbats >=1.1.0
-        - prophet >=1.0  # [py<=38]
+        - prophet >=1.0  # [py<=38 and not aarch64]
         - filterpy >=1.4.5
         - pykalman >=0.9.5
         - python
