@@ -1,5 +1,6 @@
 {% set name = "sktime" %}
-{% set version = "0.10.0" %}
+{% set version = "0.12.0" %}
+
 
 package:
   name: {{ name|lower }}
@@ -7,12 +8,12 @@ package:
 
 source:
   url: https://github.com/alan-turing-institute/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 28e9dc87dfc0f859e9effea850d7504a40ece051be42b8e467bf0f2241e983d0
+  sha256: ae789f0c50b43c9e29c39bd9f9bc98a06f7fa6776c9bd662e869a2c35aedbf3b
 
 build:
-  noarch: python
-  number: 0
-  skip: true  # [py>39]
+  number: 1
+  skip: true  # [(py==37 and aarch64) or py>39]
+
 
 
 outputs:
@@ -20,21 +21,24 @@ outputs:
     script: build_script.sh
     requirements:
       build:
+        - python                                 # [build_platform != target_platform]
+        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+        - numpy 1.21.*                           # [build_platform != target_platform]
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - llvm-openmp  # [osx]
       host:
         - python
         - deprecated >=1.2.13
-        - cython >=0.29
         - numba >=0.53,<0.55
         - numpy 1.21.*
         - pandas >=1.1.0,<1.5.0
         - pip
         - setuptools
-        - scikit-learn >=0.24.0
+        - scikit-learn >=0.24.0,<1.2.0
         - statsmodels >=0.12.1
         - wheel
+        - toml
       run:
         - python
         - deprecated >=1.2.13
@@ -42,7 +46,8 @@ outputs:
         - pandas >=1.1.0,<1.5
         - scikit-learn >=0.24.0
         - statsmodels >=0.12.1
-        - numba >=0.50,<0.55
+        - numba >=0.53,<0.55
+        - scipy <1.9.0
       run_constrained:
         - matplotlib-base >=3.3.2
         - pmdarima >=1.8.0,!=1.8.1
@@ -51,7 +56,10 @@ outputs:
         - tsfresh >=0.17.0
         - hcrystalball >=0.1.9
         - stumpy >=1.5.1
-        - prophet >=1.0
+        - tbats >=1.1.0
+        - prophet >=1.0  # [not aarch64]
+        - filterpy >=1.4.5
+        - pykalman >=0.9.5
     test:
       imports:
         - sktime
@@ -77,8 +85,10 @@ outputs:
         # - catch22 >=0.1.0
         - hcrystalball >=0.1.9
         - stumpy >=1.5.1
-        # - tbats >=1.1.0
-        - prophet >=1.0  # [py<=38]
+        - tbats >=1.1.0
+        - prophet >=1.0  # [py<=38 and not aarch64]
+        - filterpy >=1.4.5
+        - pykalman >=0.9.5
         - python
     test:
       imports:
