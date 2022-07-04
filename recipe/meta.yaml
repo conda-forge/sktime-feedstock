@@ -86,7 +86,7 @@ outputs:
         - prophet >=1.1  # [not aarch64]
         - filterpy >=1.4.5
         - pykalman >=0.9.5
-        - python
+        #- python
     test:
       imports:
         - sktime
