@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/alan-turing-institute/{{ name }}/archive/v{{ version }}.tar.gz
+  url: https://github.com/alan-turing-institute/{{ name }}/archive/v.{{ version }}.tar.gz
   sha256: 0e39ce6f7bbe59e3013a3a5f756aa6234f93a570ad6a1cfacebf78872b461529
 
 build:
