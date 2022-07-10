@@ -77,7 +77,7 @@ outputs:
         - hcrystalball >=0.1.9
         - stumpy >=1.5.1
         - tbats >=1.1.0
-        # - prophet >=1.1  # [not aarch64]
+        - prophet >=1.1  # [not aarch64 and not linux and py>37]
         - filterpy >=1.4.5
         - pykalman >=0.9.5
     test:
