@@ -13,7 +13,8 @@ source:
 build:
   number: 1
   skip: true  # [(py==37 and aarch64) or py>39]
-
+  numpy:
+    - 1.21.*
 
 outputs:
   - name: sktime
@@ -27,12 +28,15 @@ outputs:
         - llvm-openmp  # [osx]
       host:
         - python
+        - pip
+        - setuptools
       run:
         - python
         # - deprecated >=1.2.13
         - {{ pin_compatible('numpy') }}
         - pandas >=1.1.0,<1.5
-        - scikit-learn >=0.24.0
+        - numba >=0.53
+        - scikit-learn >=0.24.0,<1.2.0
         - statsmodels >=0.12.1
         - scipy <1.9.0
       run_constrained:
@@ -63,21 +67,21 @@ outputs:
   - name: sktime-all-extras
     requirements:
       run:
+        - python
         - {{ pin_subpackage("sktime", max_pin="x.x.x.x") }}
         - matplotlib-base >=3.3.2
         - pmdarima >=1.8.0,!=1.8.1  # [not win and py<=38]
-        - scikit-posthocs >=0.6.5
+        # - scikit-posthocs >=0.6.5
         - seaborn >=0.11.0
         - tsfresh >=0.17.0
         - numba >=0.53
         # - catch22 >=0.1.0
-        - hcrystalball >=0.1.9
-        # - stumpy >=1.5.1
-        - tbats >=1.1.0
-        - prophet >=1.1  # [not aarch64]
-        #- filterpy >=1.4.5
-        #- pykalman >=0.9.5
-        #- python
+        # - hcrystalball >=0.1.9                # FF
+        - stumpy >=1.5.1
+        # - tbats >=1.1.0
+        # - prophet >=1.1  # [not aarch64]      # FF  
+        # - filterpy >=1.4.5
+        # - pykalman >=0.9.5
     test:
       imports:
         - sktime
