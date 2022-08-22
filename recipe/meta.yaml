@@ -37,7 +37,6 @@ outputs:
         - scikit-learn >=0.24.0,<1.2.0
         - statsmodels >=0.12.1
         - scipy <1.9.0
-        - backoff
       run_constrained:
         - matplotlib-base >=3.3.2
         - pmdarima >=1.8.0,!=1.8.1
