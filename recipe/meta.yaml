@@ -62,6 +62,7 @@ outputs:
         - sktime.utils
 
   - name: sktime-all-extras
+    script: build_script.sh
     requirements:
       build:
         - python                                 # [build_platform != target_platform]
