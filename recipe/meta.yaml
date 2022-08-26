@@ -62,7 +62,7 @@ outputs:
         - sktime.utils
         
   - name: sktime-all-extras
-    dependencies:
+    run:
     - python
     - matplotlib-base >=3.3.2
     - pmdarima >=1.8.0,!=1.8.1
