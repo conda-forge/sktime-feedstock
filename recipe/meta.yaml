@@ -78,14 +78,11 @@ outputs:
         - prophet >=1.1  # [not aarch64 and not linux and py>37]
         - filterpy >=1.4.5
         - pykalman >=0.9.5
-        - gluonts >=0.9.0
-        - kotsu >=0.3.1
         - tensorflow
         - tensorflow-probability
         - tslearn >=0.5.2
         - statsforecast >=0.5.2
         - dtw-python
-        - esig ==0.9.7
         - mne
         - pyod >=0.8.0
 
