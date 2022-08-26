@@ -60,7 +60,8 @@ outputs:
         - sktime.series_as_features
         - sktime.transformations
         - sktime.utils
-
+        
+  - name: sktime-all-extras
     test:
       imports:
         - sktime
