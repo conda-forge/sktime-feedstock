@@ -61,34 +61,6 @@ outputs:
         - sktime.transformations
         - sktime.utils
 
-  - name: sktime-all-extras
-    requirements:
-      run:
-        - python
-        - {{ pin_subpackage("sktime", max_pin="x.x.x.x") }}
-        - matplotlib-base >=3.3.2
-        - pmdarima >=1.8.0,!=1.8.1  # [not win and py<=38]
-        - scikit-posthocs >=0.6.5
-        - seaborn >=0.11.0
-        - tsfresh >=0.17.0
-        - numba >=0.53
-        # - catch22 >=0.1.0
-        - stumpy >=1.5.1
-        - tbats >=1.1.0
-        - prophet >=1.1  # [not aarch64 and not linux and py>37]
-        - filterpy >=1.4.5
-        - pykalman >=0.9.5
-        - gluonts >=0.9.0
-        - kotsu >=0.3.1
-        - tensorflow
-        - tensorflow-probability
-        - tslearn >=0.5.2
-        - statsforecast >=0.5.2
-        - dtw-python
-        - esig ==0.9.7
-        - mne
-        - pyod >=0.8.0
-
     test:
       imports:
         - sktime
