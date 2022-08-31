@@ -1,5 +1,5 @@
 {% set name = "sktime" %}
-{% set version = "0.12.0" %}
+{% set version = "0.13.0" %}
 
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/alan-turing-institute/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: ae789f0c50b43c9e29c39bd9f9bc98a06f7fa6776c9bd662e869a2c35aedbf3b
+  url: https://github.com/alan-turing-institute/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 8191c77e4ed19f5ccde5ff1256206369aa708cc5900b24c17d287caef8702c0a
 
 build:
   number: 0
@@ -39,10 +39,10 @@ outputs:
         - python
         - deprecated >=1.2.13
         - {{ pin_compatible('numpy') }}
-        - pandas >=1.1.0,<1.5
-        - scikit-learn >=0.24.0
+        - pandas >=1.1.0,<1.5.0
+        - numba >=0.53
+        - scikit-learn >=0.24.0,<1.2.0
         - statsmodels >=0.12.1
-        - numba >=0.53,<0.55
         - scipy <1.9.0
       run_constrained:
         - matplotlib-base >=3.3.2
@@ -50,10 +50,9 @@ outputs:
         - scikit-posthocs >=0.6.5
         - seaborn >=0.11.0
         - tsfresh >=0.17.0
-        - hcrystalball >=0.1.9
         - stumpy >=1.5.1
         - tbats >=1.1.0
-        - prophet >=1.0
+        - prophet >=1.1  # [not aarch64]
         - filterpy >=1.4.5
         - pykalman >=0.9.5
     test:
@@ -72,20 +71,27 @@ outputs:
   - name: sktime-all-extras
     requirements:
       run:
-        - {{ pin_subpackage("sktime", max_pin="x.x.x.x") }}
-        - matplotlib-base >=3.3.2
-        - pmdarima >=1.8.0,!=1.8.1  # [not win and py<=38]
-        - scikit-posthocs >=0.6.5
-        - seaborn >=0.11.0
-        - tsfresh >=0.17.0
-        # - catch22 >=0.1.0
-        - hcrystalball >=0.1.9
-        - stumpy >=1.5.1
-        - tbats >=1.1.0
-        - prophet >=1.0  # [py<=38]
-        - filterpy >=1.4.5
-        - pykalman >=0.9.5
-        - python
+      - python
+      - {{ pin_subpackage("sktime", max_pin="x.x.x.x") }}
+      - matplotlib-base >=3.3.2
+      - pmdarima >=1.8.0,!=1.8.1  # [not win and py<=38]
+      - scikit-posthocs >=0.6.5
+      - seaborn >=0.11.0
+      - tsfresh >=0.17.0
+      - numba >=0.53
+      # - catch22 >=0.1.0
+      - stumpy >=1.5.1
+      - tbats >=1.1.0
+      - prophet >=1.1  # [not aarch64 and not linux and py>37]
+      - filterpy >=1.4.5
+      - pykalman >=0.9.5
+      - tensorflow
+      - tensorflow-probability
+      - tslearn >=0.5.2
+      - statsforecast >=0.5.2
+      - dtw-python
+      - mne
+      - pyod >=0.8.0
     test:
       imports:
         - sktime
