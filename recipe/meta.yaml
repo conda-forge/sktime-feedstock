@@ -1,9 +1,8 @@
 {% set name = "sktime" %}
 {% set version = "0.12.1" %}
 
-
 package:
-  name: {{ name|lower }}
+  name: sktime-suite
   version: {{ version }}
 
 source:
@@ -70,6 +69,8 @@ outputs:
 
   - name: sktime-all-extras
     requirements:
+      host:
+        - python
       run:
         - python
         - {{ pin_subpackage("sktime", exact=True) }}
