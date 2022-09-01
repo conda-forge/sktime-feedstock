@@ -90,8 +90,9 @@ outputs:
         - python
         - {{ pin_subpackage("sktime", exact=True) }}
         - matplotlib-base
-        - pmdarima  # [not win and py<=38]
-        - prophet   # [not aarch64 and not linux and py>37]
+        - pmdarima
+        # NOTE: Selector based on prophet=1.0 availablility circa 9/2022
+        - prophet   # [py>=37 and py<310 and (linux64 or osx64 or win64)]
         - pykalman
         - scikit-posthocs
         - seaborn
