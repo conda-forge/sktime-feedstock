@@ -70,9 +70,14 @@ outputs:
 
   - name: sktime-all-extras
     requirements:
+      build:
+        - python                                 # [build_platform != target_platform]
+        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+      host:
+        - python
       run:
         - python
-        - {{ pin_subpackage("sktime", max_pin="x.x.x.x") }}
+        - {{ pin_subpackage("sktime", exact=True) }}
         - matplotlib-base >=3.3.2
         - pmdarima >=1.8.0,!=1.8.1  # [not win and py<=38]
         - scikit-posthocs >=0.6.5
