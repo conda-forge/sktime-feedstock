@@ -15,7 +15,8 @@ build:
 
 outputs:
   - name: sktime
-    script: build_script.sh
+    script: build_script.sh   # [not win]
+    script: build_script.bat  # [win]
     requirements:
       build:
         - python                                 # [build_platform != target_platform]
