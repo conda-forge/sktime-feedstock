@@ -70,8 +70,6 @@ outputs:
 
   - name: sktime-all-extras
     requirements:
-      host:
-        - python
       run:
         - python
         - {{ pin_subpackage("sktime", exact=True) }}
