@@ -86,7 +86,7 @@ outputs:
     build:
       #FIXME: Extras environment not resolvable on aarch. Needs someone with
       #arm machine to tests.
-      skip: true # [aarch64]
+      skip: true  # [aarch64]
     requirements:
       host:
         - python
