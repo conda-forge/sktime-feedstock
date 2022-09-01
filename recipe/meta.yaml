@@ -22,7 +22,7 @@ requirements:
 
 outputs:
   - name: sktime
-    script: build_script.sh   # [not win]
+    script: build_script.sh   # [unix]
     script: build_script.bat  # [win]
     requirements:
       host:
@@ -42,16 +42,25 @@ outputs:
         - statsmodels >=0.12.1
         - scipy <1.9.0
       run_constrained:
+        - dtw-python
+        - esig ==0.9.7
+        - filterpy >=1.4.5
+        - hcrystalball >=0.1.9
         - matplotlib-base >=3.3.2
-        - pmdarima >=1.8.0,!=1.8.1
+        - pmdarima >=1.8.0,!=1.8.1  # [not win and py<=38]
+        - prophet >=1.0,<1.1        # [not aarch64 and not linux and py>37]
+        - pykalman >=0.9.5
+        - pyod >=0.8.0
+        - pystan ==2.19.1.1
         - scikit-posthocs >=0.6.5
         - seaborn >=0.11.0
-        - tsfresh >=0.17.0
+        - statsforecast>=0.5.2
         - stumpy >=1.5.1
         - tbats >=1.1.0
-        - prophet >=1.1  # [not aarch64]
-        - filterpy >=1.4.5
-        - pykalman >=0.9.5
+        - tensorflow
+        - tensorflow-probability
+        - tsfresh >=0.17.0
+        - tslearn >=0.5.2
     test:
       requires:
         - pip
@@ -76,18 +85,15 @@ outputs:
       run:
         - python
         - {{ pin_subpackage("sktime", exact=True) }}
-        - matplotlib-base >=3.3.2
-        - pmdarima >=1.8.0,!=1.8.1  # [not win and py<=38]
-        - scikit-posthocs >=0.6.5
-        - seaborn >=0.11.0
-        - tsfresh >=0.17.0
-        - numba >=0.53
-        # - catch22 >=0.1.0
-        - stumpy >=1.5.1
-        - tbats >=1.1.0
-        - prophet >=1.1  # [not aarch64 and not linux and py>37]
-        - filterpy >=1.4.5
-        - pykalman >=0.9.5
+        - matplotlib-base
+        - pmdarima  # [not win and py<=38]
+        - prophet   # [not aarch64 and not linux and py>37]
+        - pykalman
+        - scikit-posthocs
+        - seaborn
+        - stumpy
+        - tbats
+        - tsfresh
     test:
       requires:
         - pip
