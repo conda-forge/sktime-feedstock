@@ -13,6 +13,13 @@ build:
   number: 2
   skip: true  # [(py==37 and aarch64) or py>39]
 
+# This section is required to correctly rerender skip statement
+requirements:
+  host:
+    - python
+  run:
+    - python
+
 outputs:
   - name: sktime
     script: build_script.sh   # [not win]
