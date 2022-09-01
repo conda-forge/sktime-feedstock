@@ -11,7 +11,8 @@ source:
 
 build:
   number: 2
-  skip: true  # [(py==37 and aarch64) or py>39]
+  skip: true  # [(py==37 and aarch64)]
+  skip: true  # [py<37 or py>39]
 
 # This section is required to correctly rerender skip statement
 requirements:
@@ -50,8 +51,8 @@ outputs:
         - filterpy >=1.4.5
         - hcrystalball >=0.1.9
         - matplotlib-base >=3.3.2
-        - pmdarima >=1.8.0,!=1.8.1  # [not win and py<=38]
-        - prophet >=1.0,<1.1        # [not aarch64 and not linux and py>37]
+        - pmdarima >=1.8.0,!=1.8.1
+        - prophet >=1.0,<1.1
         - pykalman >=0.9.5
         - pyod >=0.8.0
         - pystan ==2.19.1.1
