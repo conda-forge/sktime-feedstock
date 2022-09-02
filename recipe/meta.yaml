@@ -46,6 +46,8 @@ outputs:
         - statsmodels >=0.12.1
         - scipy <1.9.0
       run_constrained:
+      # Unconstrained optional packages included for readability/fast-comparison with upstream
+      # https://github.com/alan-turing-institute/sktime/blob/v.0.12.1/pyproject.toml#L54
         - dtw-python
         - esig ==0.9.7
         - filterpy >=1.4.5
