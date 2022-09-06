@@ -67,9 +67,9 @@ outputs:
         - tensorflow-probability
         - tsfresh >=0.17.0
         - tslearn >=0.5.2
-        - gluonts >= 0.9.0
+        - gluonts
         - kotsu
-        - esig >= 0.9.7
+        - esig
     test:
       requires:
         - pip
