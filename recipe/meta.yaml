@@ -117,8 +117,8 @@ outputs:
     test:
       requires:
         - pip
-      commands:
-        - pip check
+      #commands:
+      #  - pip check
       imports:
         - sktime
         - sktime.classification
