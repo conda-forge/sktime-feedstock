@@ -105,6 +105,15 @@ outputs:
         - stumpy
         - tbats
         - tsfresh
+        - dtw-python
+        - filterpy >=1.4.5
+        - hcrystalball >=0.1.9
+        - pyod >=0.8.0
+        - pystan ==2.19.1.1
+        - statsforecast>=0.5.2
+        - tensorflow
+        - tensorflow-probability
+        - tslearn >=0.5.2
     test:
       requires:
         - pip
