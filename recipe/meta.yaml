@@ -110,7 +110,7 @@ outputs:
         - hcrystalball >=0.1.9
         - pyod >=0.8.0
         - pystan ==2.19.1.1
-        - statsforecast>=0.5.2
+        - statsforecast >=0.5.2
         - tensorflow
         - tensorflow-probability
         - tslearn >=0.5.2
