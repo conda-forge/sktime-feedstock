@@ -10,7 +10,7 @@ source:
   sha256: 0e39ce6f7bbe59e3013a3a5f756aa6234f93a570ad6a1cfacebf78872b461529
 
 build:
-  number: 2
+  number: 3
   skip: true  # [(py==37 and aarch64)]
   skip: true  # [py<37 or py>39]
 
@@ -35,7 +35,7 @@ outputs:
         - setuptools
         - wheel
         - toml
-        - build
+        - python-build
       run:
         - python
         - deprecated >=1.2.13
