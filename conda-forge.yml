@@ -7,3 +7,5 @@ github:
   branch_name: main
   tooling_branch_name: main
 build_with_mambabuild: false
+conda_build:
+  pkg_format: '2'
