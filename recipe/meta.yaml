@@ -49,7 +49,7 @@ outputs:
       # Unconstrained optional packages included for readability/fast-comparison with upstream
       # https://github.com/alan-turing-institute/sktime/blob/v.0.12.1/pyproject.toml#L54
         - dtw-python
-        - esig==0.9.7; python_version < '3.10'
+        - esig==0.9.7
         - filterpy >=1.4.5
         - hcrystalball >=0.1.9
         - matplotlib-base >=3.3.2
@@ -65,7 +65,7 @@ outputs:
         - tbats >=1.1.0
         - tensorflow
         - tensorflow-probability
-        - tsfresh>=0.17.0; python_version < '3.10'
+        - tsfresh>=0.17.0
         - tslearn >=0.5.2
     test:
       requires:
