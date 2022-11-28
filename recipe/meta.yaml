@@ -65,7 +65,7 @@ outputs:
         - tbats >=1.1.0
         - tensorflow
         - tensorflow-probability
-        - tsfresh>=0.17.0
+        - tsfresh >=0.17.0
         - tslearn >=0.5.2
     test:
       requires:
