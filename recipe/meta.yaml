@@ -85,25 +85,34 @@ outputs:
 
   - name: sktime-all-extras
     build:
-      #FIXME: Extras environment not resolvable on aarch. Needs someone with
-      #arm machine to tests.
-      skip: true  # [aarch64]
+      noarch: python
     requirements:
-      host:
-        - python
       run:
         - python
         - {{ pin_subpackage("sktime", exact=True) }}
-        - matplotlib-base
+        - cloudpickle
+        - dask
+        - dtw-python
+        - esig
+        - filterpy
+        - h5py
+        # - hmmlearn
+        # - gluonts
+        - matplotlib
+        - mne
         - pmdarima
-        # NOTE: Selector based on prophet=1.0 availablility circa 9/2022
-        - prophet   # [py>=37 and py<310 and (linux64 or osx64 or win64)]
+        - prophet
         - pykalman
-        - scikit-posthocs
+        - pyod
+        - scikit_posthocs
         - seaborn
+        - statsforecast
         - stumpy
         - tbats
         - tsfresh
+        - tslearn
+        - xarray
+
     test:
       requires:
         - pip
