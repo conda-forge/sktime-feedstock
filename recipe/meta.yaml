@@ -89,7 +89,7 @@ outputs:
     requirements:
       run:
         - python
-        - {{ pin_subpackage("sktime", exact=True) }}
+        - {{ pin_subpackage("sktime", max_pin='x.x.x') }}
         - cloudpickle
         - dask
         - dtw-python
