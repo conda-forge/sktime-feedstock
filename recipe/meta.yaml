@@ -101,7 +101,7 @@ outputs:
         - h5py
         # - hmmlearn  # not on CF
         # - gluonts  # not on CF
-        - matplotlib
+        - matplotlib-base
         - mne
         - pmdarima
         - prophet
