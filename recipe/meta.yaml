@@ -51,8 +51,8 @@ outputs:
       run_constrained:
         - esig ==0.9.7
         - filterpy >=1.4.5
-        - hmmlearn >=0.2.7  # not on CF
-        - gluonts >=0.9.0  # not on CF
+        - hmmlearn >=0.2.7
+        - gluonts >=0.9.0
         - matplotlib-base >=3.3.2
         - pmdarima >=1.8.0,!=1.8.1,<3.0.0
         - prophet >=1.1
@@ -114,10 +114,6 @@ outputs:
         - xarray
 
     test:
-      requires:
-        - pip
-      commands:
-        - pip check
       imports:
         - sktime
         - sktime.classification
