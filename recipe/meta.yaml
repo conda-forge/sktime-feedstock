@@ -1,5 +1,5 @@
 {% set name = "sktime" %}
-{% set version = "0.14.1" %}
+{% set version = "0.15.1" %}
 
 package:
   name: sktime-suite
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/alan-turing-institute/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 63c9c8e7d7210d99616e95d5d662d9c30477c1c20ecc256837ec8eb44843af14
+  sha256: cdbd66209fe00ac0de2cadaf571e5bb43f008bf9a83ee6bed44dd6ec1bd7dc17
 
 build:
   number: 0
@@ -26,7 +26,7 @@ requirements:
 
 outputs:
   - name: sktime
-    script: build_script.sh   # [unix]
+    script: build_script.sh  # [unix]
     script: build_script.bat  # [win]
     requirements:
       build:
@@ -42,32 +42,28 @@ outputs:
       run:
         - python
         - deprecated >=1.2.13
-        - numpy >=1.21.0,<1.23
+        - numpy >=1.21.0,<1.25
         - pandas >=1.1.0,<1.6.0
         - numba >=0.55
-        - scikit-learn >=0.24.0,<1.2.0
+        - scikit-learn >=0.24.0,<1.3.0
         - statsmodels >=0.12.1
-        - scipy <2.0.0
+        - scipy >=1.2.0,<2.0.0
       run_constrained:
-      # Unconstrained optional packages included for readability/fast-comparison with upstream
-      # https://github.com/alan-turing-institute/sktime/blob/v.0.12.1/pyproject.toml#L54
-        - dtw-python
         - esig ==0.9.7
         - filterpy >=1.4.5
-        - hcrystalball >=0.1.9
+        - hmmlearn >=0.2.7
+        - gluonts >=0.9.0
         - matplotlib-base >=3.3.2
         - pmdarima >=1.8.0,!=1.8.1,<3.0.0
-        - prophet >=1.0,<1.1
+        - prophet >=1.1
         - pykalman >=0.9.5
         - pyod >=0.8.0
         - pystan ==2.19.1.1
         - scikit-posthocs >=0.6.5
         - seaborn >=0.11.0
-        - statsforecast>=0.5.2
+        - statsforecast >=0.5.2
         - stumpy >=1.5.1
         - tbats >=1.1.0
-        - tensorflow
-        - tensorflow-probability
         - tsfresh >=0.17.0
         - tslearn >=0.5.2
     test:
@@ -92,27 +88,35 @@ outputs:
       #FIXME: Extras environment not resolvable on aarch. Needs someone with
       #arm machine to tests.
       skip: true  # [aarch64]
+      noarch: python
     requirements:
-      host:
-        - python
       run:
         - python
-        - {{ pin_subpackage("sktime", exact=True) }}
+        - {{ pin_subpackage("sktime", max_pin='x.x.x') }}
+        - cloudpickle
+        - dask
+        - dtw-python
+        # - esig  # not on CF
+        - filterpy
+        - h5py
+        # - hmmlearn  # not on CF
+        # - gluonts  # not on CF
         - matplotlib-base
+        - mne
         - pmdarima
-        # NOTE: Selector based on prophet=1.0 availablility circa 9/2022
-        - prophet   # [py>=37 and py<310 and (linux64 or osx64 or win64)]
+        - prophet
         - pykalman
+        - pyod
         - scikit-posthocs
         - seaborn
+        - statsforecast
         - stumpy
         - tbats
         - tsfresh
+        - tslearn
+        - xarray
+
     test:
-      requires:
-        - pip
-      commands:
-        - pip check
       imports:
         - sktime
         - sktime.classification
