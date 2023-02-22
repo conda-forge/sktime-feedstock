@@ -10,9 +10,9 @@ source:
   sha256: 6fc2ed6190c2d015813878faa5806068ac7f10f80c42f1e88343fadf62c4c513
 
 build:
-  number: 1
+  number: 2
   skip: true  # [(py==37 and aarch64)]
-  skip: true  # [py<37 or py>310]
+  skip: true  # [py<37 or py>311]
 
 # This section is required to correctly rerender skip statement
 requirements:
