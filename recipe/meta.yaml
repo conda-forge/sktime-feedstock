@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/alan-turing-institute/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
+  url: https://github.com/sktime/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
   sha256: 6fc2ed6190c2d015813878faa5806068ac7f10f80c42f1e88343fadf62c4c513
 
 build:
@@ -131,18 +131,16 @@ outputs:
         - sktime.utils
 
 about:
-  home: https://github.com/alan-turing-institute/sktime
+  home: https://github.com/sktime/sktime
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
   summary: A unified framework for machine learning with time series
-  doc_url: https://www.sktime.org/en/latest/
-  dev_url: https://github.com/alan-turing-institute/sktime
+  doc_url: https://www.sktime.net/en/latest/
+  dev_url: https://github.com/sktime/sktime
 
 extra:
   recipe-maintainers:
     - fkiraly
     - dhirschfeld
     - freddyaboulton
-    - lmmentel
-    - mloning
