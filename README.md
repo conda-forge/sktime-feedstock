@@ -1,7 +1,7 @@
 About sktime-suite
 ==================
 
-Home: https://github.com/alan-turing-institute/sktime
+Home: https://github.com/sktime/sktime
 
 Package license: BSD-3-Clause
 
@@ -9,9 +9,9 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/sktime-feedstoc
 
 Summary: A unified framework for machine learning with time series
 
-Development: https://github.com/alan-turing-institute/sktime
+Development: https://github.com/sktime/sktime
 
-Documentation: https://www.sktime.org/en/latest/
+Documentation: https://www.sktime.net/en/latest/
 
 Current build status
 ====================
