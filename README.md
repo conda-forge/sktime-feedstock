@@ -1,11 +1,11 @@
-About sktime-suite
-==================
+About sktime-suite-feedstock
+============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/sktime-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/sktime/sktime
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/sktime-feedstock/blob/main/LICENSE.txt)
 
 Summary: A unified framework for machine learning with time series
 
@@ -268,6 +268,4 @@ Feedstock Maintainers
 * [@dhirschfeld](https://github.com/dhirschfeld/)
 * [@fkiraly](https://github.com/fkiraly/)
 * [@freddyaboulton](https://github.com/freddyaboulton/)
-* [@lmmentel](https://github.com/lmmentel/)
-* [@mloning](https://github.com/mloning/)
 
