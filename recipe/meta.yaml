@@ -44,9 +44,10 @@ outputs:
         - deprecated >=1.2.13
         - numpy >=1.21.0,<1.25
         - pandas >=1.1.0,<1.6.0
-        - numba >=0.53                           # [py<311]
+        - packaging
         - scikit-learn >=0.24.0,<1.3.0
         - scipy >=1.2.0,<2.0.0
+        - skbase <0.5.0
       run_constrained:
         - esig ==0.9.7
         - filterpy >=1.4.5
@@ -54,6 +55,7 @@ outputs:
         - hmmlearn >=0.2.7
         - kotsu >=0.3.1
         - matplotlib-base >=3.3.2
+        - numba >=0.53
         - pmdarima >=1.8.0,!=1.8.1,<3.0.0
         - prophet >=1.1
         - pykalman >=0.9.5
@@ -70,6 +72,7 @@ outputs:
     test:
       requires:
         - pip
+        - pytest
       commands:
         - pip check
       imports:
@@ -94,6 +97,7 @@ outputs:
       run:
         - python
         - {{ pin_subpackage("sktime", max_pin='x.x.x') }}
+        - attrs
         - cloudpickle
         - dask
         - dtw-python
@@ -104,12 +108,14 @@ outputs:
         # - gluonts  # not on CF
         - matplotlib-base
         - mne
+        - numba >=0.53                           # [py<311] 
         - pmdarima
         - prophet
         - pykalman
         - pyod
         - scikit-posthocs
         - seaborn
+        # - seasonal  # not on CF
         - statsforecast
         - stumpy
         - tbats
@@ -117,6 +123,9 @@ outputs:
         - tslearn
         - xarray
 
+    requires:
+      - pip
+      - pytest
     test:
       imports:
         - sktime
