@@ -108,7 +108,7 @@ outputs:
         # - gluonts  # not on CF
         - matplotlib-base
         - mne
-        - numba >=0.53                           # [py<311] 
+        - numba >=0.53                           # [py<311]
         - pmdarima
         - prophet
         - pykalman
