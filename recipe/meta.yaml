@@ -123,10 +123,10 @@ outputs:
         - tslearn
         - xarray
 
-    requires:
-      - pip
-      - pytest
     test:
+      requires:
+        - pip
+        - pytest
       imports:
         - sktime
         - sktime.classification
