@@ -268,7 +268,5 @@ Feedstock Maintainers
 * [@dhirschfeld](https://github.com/dhirschfeld/)
 * [@fkiraly](https://github.com/fkiraly/)
 * [@freddyaboulton](https://github.com/freddyaboulton/)
-
-
-<!-- dummy commit to enable rerendering -->
+* [@yarnabrina](https://github.com/yarnabrina/)
 
