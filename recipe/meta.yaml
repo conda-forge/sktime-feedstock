@@ -43,7 +43,7 @@ outputs:
         - python
         - deprecated >=1.2.13
         - numpy >=1.21.0,<1.25
-        - pandas >=1.1.0,<1.6.0
+        - pandas >=1.1.0,<2.1.0
         - packaging
         - scikit-base >=0.4.4,<0.5.0
         - scikit-learn >=0.24.0,<1.3.0
@@ -55,7 +55,7 @@ outputs:
         - hmmlearn >=0.2.7
         - kotsu >=0.3.1
         - matplotlib-base >=3.3.2
-        - numba >=0.53                           # [py<311]
+        - numba >=0.53
         - pmdarima >=1.8.0,!=1.8.1,<3.0.0
         - prophet >=1.1
         - pykalman >=0.9.5
@@ -108,7 +108,7 @@ outputs:
         # - gluonts  # not on CF
         - matplotlib-base
         - mne
-        - numba >=0.53                           # [py<311]
+        - numba >=0.53
         - pmdarima
         - prophet
         - pykalman
