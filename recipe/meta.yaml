@@ -111,7 +111,7 @@ outputs:
         - numba >=0.53
         - pmdarima
         - prophet
-        - pycatch22
+        # - pycatch22  # not available on python 3.11
         - pykalman
         - pyod
         # - scikit-optimize  # excluding due to dependency conflicts
