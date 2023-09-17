@@ -1,5 +1,5 @@
 {% set name = "sktime" %}
-{% set version = "0.22.0" %}
+{% set version = "0.22.1" %}
 
 package:
   name: sktime-suite
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/sktime/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: f4c56ea79092614e48f48e1bef665bb9bba7f48ad971263f38b426bf3eeae214
+  sha256: d956d6f46276580fbce291129a6952f473f834b412f82ebebb962c8abc3360b3
 
 build:
   number: 0
@@ -42,7 +42,7 @@ outputs:
       run:
         - python
         - numpy >=1.21.0,<1.26
-        - pandas >=1.1.0,<2.1.0
+        - pandas >=1.1.0,<2.2.0
         - packaging
         - scikit-base >=0.4.4,<0.6.0
         - scikit-learn >=0.24.0,<1.4.0
@@ -62,12 +62,12 @@ outputs:
         - pystan ==2.19.1.1
         - scikit-posthocs >=0.6.5
         - seaborn >=0.11.0
-        - statsforecast >=0.5.2
+        - statsforecast >=0.5.2,<1.6.0
         - statsmodels >=0.12.1
         - stumpy >=1.5.1
         - tbats >=1.1.0
         - tsfresh >=0.17.0
-        - tslearn >=0.5.2
+        - tslearn >=0.5.2,<0.6.0
     test:
       requires:
         - pip
