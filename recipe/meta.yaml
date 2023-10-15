@@ -1,5 +1,5 @@
 {% set name = "sktime" %}
-{% set version = "0.23.0" %}
+{% set version = "0.23.1" %}
 
 package:
   name: sktime-suite
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/sktime/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: ad29352f1f05884c034ce47dec4c8a3c395519760aa54a33ad4c97e8207a5135
+  sha256: 2c225c9c7b949d4276a4a473156589cb3d6619f9d203d75555c9ca5beadc8369
 
 build:
   number: 0
@@ -41,7 +41,7 @@ outputs:
         - python-build
       run:
         - python
-        - numpy >=1.21.0,<1.26
+        - numpy >=1.21.0,<1.27
         - pandas >=1.1.0,<2.2.0
         - packaging
         - scikit-base >=0.4.4,<0.6.0
@@ -62,7 +62,7 @@ outputs:
         - pystan ==2.19.1.1
         - scikit-posthocs >=0.6.5
         - seaborn >=0.11.0
-        - statsforecast >=0.5.2,<1.6.0
+        - statsforecast >=0.5.2,<1.7.0
         - statsmodels >=0.12.1
         - stumpy >=1.5.1
         - tbats >=1.1.0
@@ -96,7 +96,6 @@ outputs:
       run:
         - python
         - {{ pin_subpackage("sktime", max_pin='x.x.x') }}
-        - attrs
         - cloudpickle
         - dask
         - dtw-python
