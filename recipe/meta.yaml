@@ -1,5 +1,5 @@
 {% set name = "sktime" %}
-{% set version = "0.23.1" %}
+{% set version = "0.24.0" %}
 
 package:
   name: sktime-suite
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/sktime/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 2c225c9c7b949d4276a4a473156589cb3d6619f9d203d75555c9ca5beadc8369
+  sha256: 0982fbb1a91d6d37c767ec6a20380b12e355ef4b66c06570afb9373533b7783f
 
 build:
   number: 0
   skip: true  # [(py==37 and aarch64)]
-  skip: true  # [py<37 or py>311]
+  skip: true  # [py<37 or py>312]
 
 # This section is required to correctly rerender skip statement
 requirements:
@@ -44,7 +44,7 @@ outputs:
         - numpy >=1.21.0,<1.27
         - pandas >=1.1.0,<2.2.0
         - packaging
-        - scikit-base >=0.4.4,<0.6.0
+        - scikit-base >=0.4.4,<0.7.0
         - scikit-learn >=0.24.0,<1.4.0
         - scipy >=1.2.0,<2.0.0
       run_constrained:
@@ -96,6 +96,7 @@ outputs:
       run:
         - python
         - {{ pin_subpackage("sktime", max_pin='x.x.x') }}
+        - arch-py
         - cloudpickle
         - dask
         - dtw-python
@@ -103,6 +104,7 @@ outputs:
         - filterpy
         - h5py
         # - hmmlearn  # not on CF
+        - holidays
         # - gluonts  # not on CF
         - matplotlib-base
         - mne
