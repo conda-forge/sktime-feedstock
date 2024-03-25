@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/sktime/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 8d1029ec974e6ba8cfbc4284e5b3c79ea8b989f5f07f385634e7970b2e0cd5cb
+  sha256: 35f20ac9ff8fd324d0aa50ac3ca7a7f1442a6ca6e9c40b60b0c4f369101efbe3
 
 build:
   number: 0
