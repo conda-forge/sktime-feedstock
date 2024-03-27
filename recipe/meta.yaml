@@ -1,5 +1,5 @@
 {% set name = "sktime" %}
-{% set version = "0.27.0" %}
+{% set version = "0.27.1" %}
 
 package:
   name: sktime-suite
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/sktime/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 3646b3e7dbb82bfe11301d5cd1e86c3a28865c4363c60bb26134891ff4b0d388
+  sha256: 35f20ac9ff8fd324d0aa50ac3ca7a7f1442a6ca6e9c40b60b0c4f369101efbe3
 
 build:
   number: 0
   skip: true  # [(py==37 and aarch64)]
-  skip: true  # [py<37 or py>312]
+  skip: true  # [py<37 or py>313]
 
 # This section is required to correctly rerender skip statement
 requirements:
