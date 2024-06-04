@@ -41,24 +41,23 @@ outputs:
         - python-build
       run:
         - python
+        - joblib >=1.2.0,<1.5
         - numpy >=1.21.0,<1.27
         - pandas >=1.1.0,<2.3.0
         - packaging
-        - scikit-base >=0.4.4,<0.8.0
-        - scikit-learn >=0.24.0,<1.5.0
+        - scikit-base >=0.4.4,<0.9.0
+        - scikit-learn >=0.24.0,<1.6.0
         - scipy >=1.2.0,<2.0.0
       run_constrained:
         - esig ==0.9.7
         - filterpy >=1.4.5
         - gluonts >=0.9.0
         - hmmlearn >=0.2.7
-        - kotsu >=0.3.1
         - matplotlib-base >=3.3.2
         - numba >=0.53
         - pmdarima >=1.8.0,!=1.8.1,<3.0.0
         - prophet >=1.1
         - pycatch22 >=0.4,<0.4.6
-        - pykalman >=0.9.5
         - pyod >=0.8.0
         - pystan ==2.19.1.1
         - scikit-posthocs >=0.6.5
@@ -113,7 +112,6 @@ outputs:
         - pmdarima
         - prophet
         - pycatch22
-        - pykalman
         - pyod
         # - scikit-optimize  # excluding due to dependency conflicts
         - scikit-posthocs
