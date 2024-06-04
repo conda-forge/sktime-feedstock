@@ -11,8 +11,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [(py==37 and aarch64)]
-  skip: true  # [py<37 or py>313]
+  skip: true  # [py<39 or py>313]
 
 # This section is required to correctly rerender skip statement
 requirements:
