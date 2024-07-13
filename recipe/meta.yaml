@@ -1,5 +1,5 @@
 {% set name = "sktime" %}
-{% set version = "0.30.2" %}
+{% set version = "0.31.0" %}
 
 package:
   name: sktime-suite
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/sktime/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 2642460406eda94ad38e0054dbba96fef45f16fb2504f3f2737b9f178d18a0d6
+  sha256: 85bcb2d1deff515eb566b44e859066ff4b18aecfcf53b823a412da55fd027e58
 
 build:
   number: 0
@@ -41,7 +41,7 @@ outputs:
       run:
         - python
         - joblib >=1.2.0,<1.5
-        - numpy >=1.21.0,<1.27
+        - numpy >=1.21.0,<2.1
         - pandas >=1.1.0,<2.3.0
         - packaging
         - scikit-base >=0.4.4,<0.9.0
