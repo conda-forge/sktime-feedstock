@@ -1,5 +1,5 @@
 {% set name = "sktime" %}
-{% set version = "0.33.2" %}
+{% set version = "0.34.0" %}
 
 package:
   name: sktime-suite
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/sktime/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: e71298518c0068758d7fb0bdd7dac580eeea24aeb5c5315f861afe1bbc463854
+  sha256: ea0e300c8f75ddc4f7ae7fbc467027cb6b57b8a26f4e6093beea26ce55f02752
 
 build:
   number: 0
-  skip: true  # [py<39 or py>313]
+  skip: true  # [py<39 or py>314]
 
 # This section is required to correctly rerender skip statement
 requirements:
@@ -41,10 +41,10 @@ outputs:
       run:
         - python
         - joblib >=1.2.0,<1.5
-        - numpy >=1.21.0,<2.1
+        - numpy >=1.21.0,<2.2
         - pandas >=1.1.0,<2.3.0
         - packaging
-        - scikit-base >=0.4.4,<0.9.0
+        - scikit-base >=0.4.4,<0.12.0
         - scikit-learn >=0.24.0,<1.6.0
         - scipy >=1.2.0,<2.0.0
       run_constrained:
