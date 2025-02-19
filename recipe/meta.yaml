@@ -10,7 +10,7 @@ source:
   sha256: 04a9fbb7940e3aa40891870e191d15b0650887388a18c3f603be8740f6d41d4a
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<39 or py>314]
 
 # This section is required to correctly rerender skip statement
@@ -93,7 +93,7 @@ outputs:
       noarch: python
     requirements:
       run:
-        - python
+        - python >={{ python_min }}
         - {{ pin_subpackage("sktime", max_pin='x.x.x') }}
         - arch-py
         - cloudpickle
@@ -127,6 +127,7 @@ outputs:
       requires:
         - pip
         - pytest
+        - python {{ python_min }}
       imports:
         - sktime
         - sktime.classification
