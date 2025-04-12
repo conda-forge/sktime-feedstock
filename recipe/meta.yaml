@@ -1,5 +1,5 @@
 {% set name = "sktime" %}
-{% set version = "0.36.0" %}
+{% set version = "0.37.0" %}
 
 package:
   name: sktime-suite
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/sktime/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 04a9fbb7940e3aa40891870e191d15b0650887388a18c3f603be8740f6d41d4a
+  sha256: 1db0246d68054b7b153855cf08352be3a2e16c34e900ea1971cfe4dceb4c8bea
 
 build:
   number: 0
