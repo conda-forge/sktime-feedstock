@@ -1,5 +1,5 @@
 {% set name = "sktime" %}
-{% set version = "0.36.1" %}
+{% set version = "0.37.0" %}
 
 package:
   name: sktime-suite
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/sktime/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 05a7aac65432ae6e009aef9f975e1a92be40bee27364be085916638e43cd3805
+  sha256: 1db0246d68054b7b153855cf08352be3a2e16c34e900ea1971cfe4dceb4c8bea
 
 build:
   number: 0
@@ -61,7 +61,7 @@ outputs:
         - pystan ==2.19.1.1
         - scikit-posthocs >=0.6.5
         - seaborn >=0.11.0
-        - statsforecast >=0.5.2,<1.8.0
+        - statsforecast >=0.5.2,<2.1.0
         - statsmodels >=0.12.1
         - stumpy >=1.5.1
         - tbats >=1.1.0
