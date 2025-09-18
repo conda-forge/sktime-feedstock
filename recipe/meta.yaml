@@ -1,5 +1,5 @@
 {% set name = "sktime" %}
-{% set version = "0.38.4" %}
+{% set version = "0.38.5" %}
 
 package:
   name: sktime-suite
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/sktime/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: d7e8ae71b1b6b25c38e74fdd9759fe6326ab95de46740dc19f9e333d61be4739
+  sha256: 1a0dc3b1b3ec53074e2942c5f99bff654e8ec5895671af60116b1c0f66582243
 
 build:
   number: 0
@@ -99,16 +99,12 @@ outputs:
         - cloudpickle
         - dask
         - dtw-python
-        # - esig  # not on CF
-        - filterpy
         - h5py
         # - hmmlearn  # not on CF
         - holidays
         # - gluonts  # not on CF
         - matplotlib-base
-        - mne
         - numba >=0.53
-        - pmdarima
         - prophet
         - pycatch22
         - pyod
@@ -118,7 +114,6 @@ outputs:
         # - seasonal  # not on CF
         - statsforecast
         - stumpy
-        - tbats
         - tsfresh
         - tslearn
         - xarray
