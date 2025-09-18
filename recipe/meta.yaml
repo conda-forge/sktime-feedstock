@@ -99,16 +99,12 @@ outputs:
         - cloudpickle
         - dask
         - dtw-python
-        # - esig  # not on CF
-        - filterpy
         - h5py
         # - hmmlearn  # not on CF
         - holidays
         # - gluonts  # not on CF
         - matplotlib-base
-        - mne
         - numba >=0.53
-        - pmdarima
         - prophet
         - pycatch22
         - pyod
@@ -118,7 +114,6 @@ outputs:
         # - seasonal  # not on CF
         - statsforecast
         - stumpy
-        - tbats
         - tsfresh
         - tslearn
         - xarray
